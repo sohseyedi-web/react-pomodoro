@@ -94,7 +94,7 @@ const Layout = () => {
     }
   };
   return (
-    <section className="flex flex-col items-center justify-center mt-6 md:w-[450px] w-[95%] container mx-auto">
+    <section className="flex flex-col items-center justify-center mt-6 md:w-[450px] w-[85%] container mx-auto">
       <Header />
       <main className="card my-3 w-full text-center">
         <div className="w-[300px] mx-auto px-4">
@@ -102,7 +102,7 @@ const Layout = () => {
             value={progressValue}
             text={minutes + ":" + seconds}
             styles={buildStyles({
-              textColor: "#fff",
+              textColor: mode === "work" ? red : green,
               pathColor: mode === "work" ? red : green,
               tailColor: "rgba(255,255,255,.2)",
             })}

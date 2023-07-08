@@ -6,13 +6,16 @@ import { Toaster } from "react-hot-toast";
 import TimerProvider from "./context/TimerProvider";
 import "react-circular-progressbar/dist/styles.css";
 import SettingProvider from "./context/SettingProvider";
+import ThemeProvider from "./context/ThemeProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <TimerProvider>
       <SettingProvider>
-        <App />
-        <Toaster />
+        <ThemeProvider>
+          <App />
+          <Toaster />
+        </ThemeProvider>
       </SettingProvider>
     </TimerProvider>
   </React.StrictMode>

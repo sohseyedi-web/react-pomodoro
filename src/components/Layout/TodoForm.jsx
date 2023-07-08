@@ -37,7 +37,7 @@ const TodoForm = () => {
         id="title"
         name="title"
         {...formik.getFieldProps("title")}
-        className="w-[75%] bg-transparent text-lg border-none placeholder:text-gray-100 placeholder:opacity-50 outline-none px-2 text-white"
+        className="w-[75%] bg-transparent text-lg border-none placeholder:text-gray-900 dark:placeholder:text-gray-100 placeholder:opacity-50 outline-none px-2"
         placeholder="برای شروع، کار جدید ثبت کن"
       />
       <button

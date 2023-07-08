@@ -1,10 +1,11 @@
 import * as RiIcon from "react-icons/ri";
 import { toast } from "react-hot-toast";
 import { useSetting } from "./../../context/SettingProvider";
-import { useEffect, useState } from "react";
+import { useDark } from "../../context/ThemeProvider";
 
 const Setting = () => {
   const AllSettings = useSetting();
+  const { dark, setDark } = useDark();
 
   const incrementWorkTime = () => {
     AllSettings.setWorkMinutes((prevState) => prevState + 1);
@@ -25,6 +26,10 @@ const Setting = () => {
     } else {
       toast.success("دیگه نمیشه!");
     }
+  };
+
+  const handleThemeSwitch = () => {
+    setDark(dark === "dark" ? "light" : "dark");
   };
 
   return (
@@ -56,6 +61,26 @@ const Setting = () => {
             <button className="btnFull text-3xl" onClick={incrementBreakTime}>
               +
             </button>
+          </div>
+        </div>
+        <div className="my-5 gap-y-3">
+          <h3 className="text-3xl font-semibold text-gray-100">صفحه نمایش</h3>
+          <div className="gap-x-7 flex items-center justify-center mt-5">
+            {dark === "dark" ? (
+              <button
+                className="btnFull text-3xl transition-all duration-300"
+                onClick={handleThemeSwitch}
+              >
+                <RiIcon.RiMoonFill />
+              </button>
+            ) : (
+              <button
+                className="btnFull text-3xl transition-all duration-300"
+                onClick={handleThemeSwitch}
+              >
+                <RiIcon.RiSunFill />
+              </button>
+            )}
           </div>
         </div>
       </div>
