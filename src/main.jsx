@@ -7,16 +7,19 @@ import TimerProvider from "./context/TimerProvider";
 import "react-circular-progressbar/dist/styles.css";
 import SettingProvider from "./context/SettingProvider";
 import ThemeProvider from "./context/ThemeProvider";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <TimerProvider>
-      <SettingProvider>
-        <ThemeProvider>
-          <App />
-          <Toaster />
-        </ThemeProvider>
-      </SettingProvider>
-    </TimerProvider>
+    <BrowserRouter>
+      <TimerProvider>
+        <SettingProvider>
+          <ThemeProvider>
+            <App />
+            <Toaster />
+          </ThemeProvider>
+        </SettingProvider>
+      </TimerProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

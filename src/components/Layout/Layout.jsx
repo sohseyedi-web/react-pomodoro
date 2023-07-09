@@ -4,7 +4,7 @@ import TodoList from "./TodoList";
 import { useState, useEffect, useRef } from "react";
 import * as RiIcon from "react-icons/ri";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import { useSetting } from "./../../context/SettingProvider";
+import { useSetting } from "../../context/SettingProvider";
 import { toast } from "react-hot-toast";
 import { useTimer } from "../../context/TimerProvider";
 
@@ -94,46 +94,8 @@ const Layout = () => {
     }
   };
   return (
-    <section className="flex flex-col items-center justify-center mt-6 md:w-[450px] w-[85%] container mx-auto">
-      <Header />
-      <main className="card my-3 w-full text-center">
-        <div className="w-[300px] mx-auto px-4">
-          <CircularProgressbar
-            value={progressValue}
-            text={minutes + ":" + seconds}
-            styles={buildStyles({
-              textColor: mode === "work" ? red : green,
-              pathColor: mode === "work" ? red : green,
-              tailColor: "rgba(255,255,255,.2)",
-            })}
-          />
-        </div>
-
-        {paused ? (
-          <button className="btnFull mt-3" onClick={startTimer}>
-            <RiIcon.RiPlayFill size={32} />
-          </button>
-        ) : (
-          <div className="flex items-center justify-center">
-            <button className="btnFull" onClick={resetTimer}>
-              <RiIcon.RiRepeat2Line size={32} />
-            </button>
-            <button className="btnFull" onClick={stopTimer}>
-              <RiIcon.RiPauseFill size={32} />
-            </button>
-          </div>
-        )}
-        <div className="absolute left-2 top-2">
-          <button
-            className="btnFull"
-            onClick={() => AllSettings.setShowSettings(true)}
-          >
-            <RiIcon.RiSettings3Fill size={32} />
-          </button>
-        </div>
-      </main>
-      <TodoForm />
-      <TodoList onReset={resetTimer} />
+    <section className="">
+      <h3>s</h3>
     </section>
   );
 };

@@ -10,12 +10,11 @@
   font-family: Estedad, sans-serif;
 }
 
-@layer base {
-  body {
-    @apply bg-[#eee];
-    @apply dark:bg-[#252525] dark:text-gray-50 bg-gray-50 text-gray-900;
-  }
+body{
+  background-color: #9190d9
 }
+
+
 
 @layer components {
   .btnFull {
