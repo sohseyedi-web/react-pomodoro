@@ -10,7 +10,7 @@ const LinkItem = [
 
 const Navigation = () => {
   return (
-    <nav className="py-3 absolute w-full bottom-0 flex items-center justify-center gap-x-10">
+    <nav className="py-3 absolute w-full bottom-0 flex items-center justify-around">
       {LinkItem.map((item, index) => (
         <NavLink
           to={item.path}
