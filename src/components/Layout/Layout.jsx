@@ -1,14 +1,13 @@
 import Header from "./Header";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
 import { useState, useEffect, useRef } from "react";
-import * as RiIcon from "react-icons/ri";
+import * as FaIcon from "react-icons/fa";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import { useSetting } from "../../context/SettingProvider";
 import { toast } from "react-hot-toast";
 import { useTimer } from "../../context/TimerProvider";
+import { Link } from "react-router-dom";
 
-const red = "#f54e4e";
+const red = "#6b4ca6";
 const green = "#4aec8c";
 
 const Layout = () => {
@@ -75,15 +74,6 @@ const Layout = () => {
     toast.success("زمان متوقف شد");
   };
 
-  const resetTimer = () => {
-    setPaused(true);
-    pausedRef.current = true;
-    modeRef.current === "work";
-    secondRef.current = AllSettings.workMinutes * 60;
-    setMode(modeRef.current);
-    setSecondsLeft(secondRef.current);
-  };
-
   const startTimer = () => {
     if (activeTimer) {
       setPaused(false);
@@ -94,8 +84,40 @@ const Layout = () => {
     }
   };
   return (
-    <section className="">
-      <h3>s</h3>
+    <section>
+      <h4 className="text-center text-white font-semibold pt-3 text-2xl">
+        پومودورو
+      </h4>
+      <Header active={activeTimer} />
+      {!activeTimer ? (
+        <Link
+          to={"/todos"}
+          className="w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto"
+        >
+          <FaIcon.FaArrowLeft size={20} />
+        </Link>
+      ) : (
+        <main className="mt-20">
+          <div className="w-[300px] mx-auto px-4">
+            <CircularProgressbar
+              value={progressValue}
+              text={minutes + ":" + seconds}
+              styles={buildStyles({
+                textColor: "#fff",
+                pathColor: mode === "work" ? red : green,
+                tailColor: "rgba(255,255,255,.2)",
+              })}
+            />
+          </div>
+          <button className="mt-5 w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto">
+            {paused ? (
+              <FaIcon.FaPlay size={20} onClick={startTimer} />
+            ) : (
+              <FaIcon.FaPause size={20} onClick={stopTimer} />
+            )}
+          </button>
+        </main>
+      )}
     </section>
   );
 };
