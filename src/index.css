@@ -10,18 +10,6 @@
   font-family: Estedad, sans-serif;
 }
 
-body{
-  background-color: #9190d9
-}
-
-
-
-@layer components {
-  .btnFull {
-    @apply w-[50px] scale-100 hover:scale-110 transition-all duration-300 rounded-full flex items-center text-white mx-auto justify-center h-[50px] bg-gray-900;
-  }
-
-  .card {
-    @apply py-5 rounded-md my-3 w-full shadow-md border-2 border-white relative;
-  }
+body {
+  background-color: #9190d9;
 }

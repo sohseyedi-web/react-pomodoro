@@ -1,100 +1,55 @@
 import * as RiIcon from "react-icons/ri";
-import { toast } from "react-hot-toast";
-import { useSetting } from "../../context/SettingProvider";
-import { useDark } from "../../context/ThemeProvider";
+import BoxSetting from "../common/BoxSetting";
+import { useSetting } from "./../../context/SettingProvider";
 
 const Setting = () => {
   const AllSettings = useSetting();
-  const { dark, setDark } = useDark();
-
-  const incrementWorkTime = () => {
-    AllSettings.setWorkMinutes((prevState) => prevState + 1);
-  };
-  const increaseWorkTime = () => {
-    if (AllSettings.workMinutes !== 0) {
-      AllSettings.setWorkMinutes((prevState) => prevState - 1);
-    } else {
-      toast.success("دیگه نمیشه!");
-    }
-  };
-  const incrementBreakTime = () => {
-    AllSettings.setBreakMinutes((prevState) => prevState + 1);
-  };
-  const increaseBreakTime = () => {
-    if (AllSettings.breakMinutes !== 0) {
-      AllSettings.setBreakMinutes((prevState) => prevState - 1);
-    } else {
-      toast.success("دیگه نمیشه!");
-    }
-  };
-
-  const handleThemeSwitch = () => {
-    setDark(dark === "dark" ? "light" : "dark");
-  };
-
   return (
-    // <section className="h-screen bg-slate-950 relative">
-    //   <div className="flex items-center justify-center text-white mx-auto w-[300px] container pt-10 flex-col">
-    //     <div className="my-5 gap-y-3 text-center">
-    //       <h3 className="text-3xl font-semibold text-gray-100">زمان کار</h3>
-    //       <div className="gap-x-7 flex items-center justify-center mt-5">
-    //         <button className="btnFull text-3xl" onClick={increaseWorkTime}>
-    //           -
-    //         </button>
-    //         <span className="text-2xl font-semibold">
-    //           {AllSettings.workMinutes}
-    //         </span>
-    //         <button className="btnFull text-3xl" onClick={incrementWorkTime}>
-    //           +
-    //         </button>
-    //       </div>
-    //     </div>
-    //     <div className="my-5 gap-y-3">
-    //       <h3 className="text-3xl font-semibold text-gray-100">زمان استراحت</h3>
-    //       <div className="gap-x-7 flex items-center justify-center mt-5">
-    //         <button className="btnFull text-3xl" onClick={increaseBreakTime}>
-    //           -
-    //         </button>
-    //         <span className="text-2xl font-semibold">
-    //           {AllSettings.breakMinutes}
-    //         </span>
-    //         <button className="btnFull text-3xl" onClick={incrementBreakTime}>
-    //           +
-    //         </button>
-    //       </div>
-    //     </div>
-    //     <div className="my-5 gap-y-3">
-    //       <h3 className="text-3xl font-semibold text-gray-100">صفحه نمایش</h3>
-    //       <div className="gap-x-7 flex items-center justify-center mt-5">
-    //         {dark === "dark" ? (
-    //           <button
-    //             className="btnFull text-3xl transition-all duration-300"
-    //             onClick={handleThemeSwitch}
-    //           >
-    //             <RiIcon.RiMoonFill />
-    //           </button>
-    //         ) : (
-    //           <button
-    //             className="btnFull text-3xl transition-all duration-300"
-    //             onClick={handleThemeSwitch}
-    //           >
-    //             <RiIcon.RiSunFill />
-    //           </button>
-    //         )}
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div
-    //     className="fixed right-3 top-3 text-white btnFull cursor-pointer"
-    //     onClick={() => AllSettings.setShowSettings(false)}
-    //   >
-    //     <RiIcon.RiHome2Line size={30} />
-    //   </div>
-    // </section>
-  <section>
-    s
-  </section>
+    <section>
+      <h4 className="text-center text-white font-semibold pt-3 text-2xl">
+        تنظیمات
+      </h4>
+      <BoxSetting
+        title={"زمان کار"}
+        value={AllSettings.workMinutes}
+        setValue={AllSettings.setWorkMinutes}
+      />
+      <BoxSetting
+        title={"زمان استراحت"}
+        value={AllSettings.breakMinutes}
+        setValue={AllSettings.setBreakMinutes}
+      />
+
+      <div
+        className={`h-[100px]
+        bg-[#2c2e3e] text-white w-[90%] flex flex-col mx-auto my-2 rounded-2xl shadow-md py-3 mt-5 transition-all duration-300`}
+      >
+        <div className="flex items-center justify-between px-4 w-full cursor-pointer">
+          <h3>صفحه نمایش</h3>
+          <div className="gap-x-1 flex items-center">
+            <span>تاریک</span>
+          </div>
+        </div>
+        <div
+          className={
+            "flex items-center justify-center pt-5 text-center gap-x-5"
+          }
+        >
+          <button className="w-[35px] h-[35px] rounded-full shadow-md border-none flex items-center justify-center text-3xl">
+            <RiIcon.RiMoonFill />
+          </button>
+          <button className="w-[35px] h-[35px] rounded-full shadow-md border-none flex items-center justify-center text-3xl">
+            <RiIcon.RiSunFill />
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Setting;
+// const { dark, setDark } = useDark();
+
+// const handleThemeSwitch = () => {
+//   setDark(dark === "dark" ? "light" : "dark");
+// };
