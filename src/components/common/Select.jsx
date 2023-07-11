@@ -8,7 +8,7 @@ const Select = ({ title, type }) => {
     <div
       className={`${
         open ? "h-[230px]" : "h-[55px]"
-      }  bg-[#2c2e3e] text-white w-[90%] flex flex-col px-2 mx-auto my-2 rounded-2xl shadow-md py-3 mt-5 transition-all duration-300`}
+      }  bg-[#2c2e3e] text-white w-[90%] flex flex-col px-2 mx-auto my-2 rounded-2xl shadow-md py-3 mt-5 transition-all duration-200`}
     >
       <div
         className="flex items-center cursor-pointer justify-between"
@@ -26,7 +26,7 @@ const Select = ({ title, type }) => {
         </span>
       </div>
       {open && (
-        <div className="mt-5">
+        <div className="mt-5 transition-all duration-300">
           <p className="mb-3 text-sm leading-8">
             {type === "org"
               ? `تکنیک پومودورو که از آن گاهی با عنوان فن پومودورو هم یاد می‌شود،

@@ -5,8 +5,8 @@ import { useSetting } from "./../../context/SettingProvider";
 const Setting = () => {
   const AllSettings = useSetting();
   return (
-    <section>
-      <h4 className="text-center text-white font-semibold pt-3 text-2xl">
+    <>
+      <h4 className="title">
         تنظیمات
       </h4>
       <BoxSetting
@@ -43,13 +43,9 @@ const Setting = () => {
           </button>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
 export default Setting;
-// const { dark, setDark } = useDark();
 
-// const handleThemeSwitch = () => {
-//   setDark(dark === "dark" ? "light" : "dark");
-// };

@@ -17,7 +17,7 @@ const Navigation = () => {
           key={index}
           className={({ isActive }) =>
             isActive
-              ? " text-[#6b4ca6] shadow-[#6b4ca6] font-semibold scale-100 hover:scale-110 transition-all duration-300"
+              ? "text-[#6b4ca6] font-semibold scale-100 hover:scale-110 transition-all duration-300"
               : "text-[#aaa] font-semibold scale-100 hover:scale-110 transition-all duration-300"
           }
         >

@@ -5,7 +5,7 @@ import Select from "../common/Select";
 const Profile = () => {
   return (
     <>
-      <h4 className="mt-4 text-white text-2xl font-semibold text-center">
+      <h4 className="title">
         سلام ، سهیل سیدی
       </h4>
       <Select title="درباره پومودورو" type="org" />

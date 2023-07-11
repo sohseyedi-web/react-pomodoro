@@ -21,8 +21,8 @@ body {
 
 
 @layer components {
-  .btnFull {
-    @apply w-[50px] scale-100 hover:scale-110 transition-all duration-300 rounded-full flex items-center text-white mx-auto justify-center h-[50px] bg-gray-900;
+  .title {
+    @apply text-center text-white font-semibold pt-3 text-2xl;
   }
 
   .card {

@@ -21,8 +21,8 @@ const TodoList = () => {
   };
 
   return (
-    <section>
-      <h4 className="text-center text-white font-semibold pt-3 text-2xl">
+    <>
+      <h4 className="title">
         یادداشت ها
       </h4>
       <TodoForm />
@@ -56,7 +56,7 @@ const TodoList = () => {
           ))
         )}
       </ul>
-    </section>
+    </>
   );
 };
 

@@ -84,15 +84,15 @@ const Layout = () => {
     }
   };
   return (
-    <section>
-      <h4 className="text-center text-white font-semibold pt-3 text-2xl">
+    <>
+      <h4 className="title">
         پومودورو
       </h4>
       <Header active={activeTimer} />
       {!activeTimer ? (
         <Link
           to={"/todos"}
-          className="w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto"
+          className="animate-pulse w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto"
         >
           <FaIcon.FaArrowLeft size={20} />
         </Link>
@@ -109,16 +109,24 @@ const Layout = () => {
               })}
             />
           </div>
-          <button className="mt-5 w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto">
-            {paused ? (
-              <FaIcon.FaPlay size={20} onClick={startTimer} />
-            ) : (
-              <FaIcon.FaPause size={20} onClick={stopTimer} />
-            )}
-          </button>
+          {paused ? (
+            <button
+              onClick={startTimer}
+              className="mt-5 w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto"
+            >
+              <FaIcon.FaPlay size={20} />
+            </button>
+          ) : (
+            <button
+              onClick={stopTimer}
+              className="mt-5 w-[50px] h-[50px] rounded-full shadow-md border-none bg-[#6b4ca6] text-white flex items-center justify-center text-3xl mx-auto"
+            >
+              <FaIcon.FaPause size={20} />
+            </button>
+          )}
         </main>
       )}
-    </section>
+    </>
   );
 };
 
