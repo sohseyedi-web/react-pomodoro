@@ -1,14 +1,17 @@
 import * as RiIcon from "react-icons/ri";
 import BoxSetting from "../common/BoxSetting";
 import { useSetting } from "./../../context/SettingProvider";
+import { useDark } from "./../../context/ThemeProvider";
 
 const Setting = () => {
   const AllSettings = useSetting();
+  const { dark, setDark } = useDark();
+  const handleThemeSwitch = () => {
+    setDark(dark === "dark" ? "light" : "dark");
+  };
   return (
     <>
-      <h4 className="title">
-        تنظیمات
-      </h4>
+      <h4 className="title">تنظیمات</h4>
       <BoxSetting
         title={"زمان کار"}
         value={AllSettings.workMinutes}
@@ -27,7 +30,7 @@ const Setting = () => {
         <div className="flex items-center justify-between px-4 w-full cursor-pointer">
           <h3>صفحه نمایش</h3>
           <div className="gap-x-1 flex items-center">
-            <span>تاریک</span>
+            <span>{dark === "dark" ? "تاریک" : "روشن"}</span>
           </div>
         </div>
         <div
@@ -35,11 +38,21 @@ const Setting = () => {
             "flex items-center justify-center pt-5 text-center gap-x-5"
           }
         >
-          <button className="w-[35px] h-[35px] rounded-full shadow-md border-none flex items-center justify-center text-3xl">
-            <RiIcon.RiMoonFill />
-          </button>
-          <button className="w-[35px] h-[35px] rounded-full shadow-md border-none flex items-center justify-center text-3xl">
+          <button
+            onClick={handleThemeSwitch}
+            className={`${
+              dark === "light" && "text-[#9190d9]"
+            } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
+          >
             <RiIcon.RiSunFill />
+          </button>
+          <button
+            onClick={handleThemeSwitch}
+            className={`${
+              dark === "dark" && "text-[#9190d9]"
+            } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
+          >
+            <RiIcon.RiMoonFill />
           </button>
         </div>
       </div>
@@ -48,4 +61,3 @@ const Setting = () => {
 };
 
 export default Setting;
-

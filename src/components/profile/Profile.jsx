@@ -10,7 +10,7 @@ const Profile = () => {
       </h4>
       <Select title="درباره پومودورو" type="org" />
       <Select title="درباره ما" type="fake" />
-      <div className="my-5 flex items-center justify-center gap-x-8 text-white">
+      <div className="my-5 flex items-center justify-center gap-x-8">
         <Link
           to={"https://github.com/sohseyedi-web"}
           className="scale-100 hover:scale-110 transition-all duration-300"

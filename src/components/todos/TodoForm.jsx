@@ -43,7 +43,7 @@ const TodoForm = () => {
         disabled={!formik.isValid}
         className={`${
           !formik.isValid ? "opacity-50" : "opacity-100"
-        } bg-[#9190d9] text-white border-none rounded-l-md w-[13%] flex items-center justify-center h-full`}
+        } dark:bg-[#9190d9] bg-[#6b4ca6] text-white border-none rounded-l-md w-[13%] flex items-center justify-center h-full`}
       >
         <RiIcon.RiPencilFill size={22} />
       </button>

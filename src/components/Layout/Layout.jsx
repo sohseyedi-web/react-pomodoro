@@ -6,12 +6,14 @@ import { useState, useEffect, useRef } from "react";
 import { useTimer } from "../../context/TimerProvider";
 import { useSetting } from "../../context/SettingProvider";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import { useDark } from "../../context/ThemeProvider";
 
 const red = "#6b4ca6";
 const green = "#4aec8c";
 
 const Layout = () => {
   const { timers } = useTimer();
+  const {dark} = useDark()
   const AllSettings = useSetting();
   const [paused, setPaused] = useState(true);
   const [mode, setMode] = useState("work");
@@ -103,7 +105,7 @@ const Layout = () => {
               value={progressValue}
               text={minutes + ":" + seconds}
               styles={buildStyles({
-                textColor: "#fff",
+                textColor: dark === 'dark' ? "#fff" : "#1e1b2e",
                 pathColor: mode === "work" ? red : green,
                 tailColor: "rgba(255,255,255,.2)",
               })}

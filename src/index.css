@@ -10,22 +10,21 @@
   font-family: Estedad, sans-serif;
 }
 
-body {
-  background-color: #9190d9;
-}
+
 
 .lists::-webkit-scrollbar {
   width: 0px;
 }
 
-
+@layer base {
+  body {
+    @apply bg-[#9190d9];
+    @apply dark:bg-[#9190d9] dark:text-gray-50 bg-gray-50 text-[#1e1b2e];
+  }
+}
 
 @layer components {
   .title {
-    @apply text-center text-white font-semibold pt-3 text-2xl;
-  }
-
-  .card {
-    @apply py-5 rounded-md my-3 w-full shadow-md border-2 border-white relative;
+    @apply text-center dark:text-white text-[#1e1b2e] font-semibold pt-3 text-2xl;
   }
 }
