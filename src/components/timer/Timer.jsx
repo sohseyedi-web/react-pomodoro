@@ -11,7 +11,7 @@ import { useDark } from "../../context/ThemeProvider";
 const red = "#6b4ca6";
 const green = "#4aec8c";
 
-const Layout = () => {
+const Timer = () => {
   const { timers } = useTimer();
   const {dark} = useDark()
   const AllSettings = useSetting();
@@ -132,4 +132,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Timer;

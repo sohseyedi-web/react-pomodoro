@@ -1,7 +1,7 @@
 import * as RiIcon from "react-icons/ri";
-import BoxSetting from "../common/BoxSetting";
-import { useSetting } from "./../../context/SettingProvider";
-import { useDark } from "./../../context/ThemeProvider";
+import { useSetting } from "../context/SettingProvider";
+import { useDark } from "../context/ThemeProvider";
+import BoxSetting from './common/BoxSetting';
 
 const Setting = () => {
   const AllSettings = useSetting();
@@ -40,17 +40,15 @@ const Setting = () => {
         >
           <button
             onClick={handleThemeSwitch}
-            className={`${
-              dark === "light" && "text-[#9190d9]"
-            } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
+            className={`${dark === "light" && "text-[#9190d9]"
+              } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
           >
             <RiIcon.RiSunFill />
           </button>
           <button
             onClick={handleThemeSwitch}
-            className={`${
-              dark === "dark" && "text-[#9190d9]"
-            } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
+            className={`${dark === "dark" && "text-[#9190d9]"
+              } w-[35px] h-[35px] rounded-full shadow-md border-none transition-all duration-300 flex items-center justify-center text-3xl`}
           >
             <RiIcon.RiMoonFill />
           </button>

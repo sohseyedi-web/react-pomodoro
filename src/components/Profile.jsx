@@ -1,13 +1,11 @@
-import Select from "../common/Select";
 import { Link } from "react-router-dom";
 import * as RiIcon from "react-icons/ri";
+import Select from "./common/Select";
 
 const Profile = () => {
   return (
     <>
-      <h4 className="title">
-        سلام ، سهیل سیدی
-      </h4>
+      <h4 className="title">سلام ، سهیل سیدی</h4>
       <Select title="درباره پومودورو" type="org" />
       <Select title="درباره ما" type="fake" />
       <div className="my-5 flex items-center justify-center gap-x-8">

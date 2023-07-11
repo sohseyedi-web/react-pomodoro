@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
+import Navigation from "./components/common/Navigation";
+import Profile from "./components/Profile";
+import Setting from "./components/Setting";
+import Timer from "./components/timer/Timer";
 import TodoList from "./components/todos/TodoList";
-import Timer from "./components/layout/Layout";
-import Setting from "./components/setting/Setting";
-import Profile from "./components/profile/Profile";
-import Navigation from './components/common/Navigation';
 
 function App() {
   return (
