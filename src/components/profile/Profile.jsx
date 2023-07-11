@@ -1,6 +1,6 @@
-import * as RiIcon from "react-icons/ri";
-import { Link } from "react-router-dom";
 import Select from "../common/Select";
+import { Link } from "react-router-dom";
+import * as RiIcon from "react-icons/ri";
 
 const Profile = () => {
   return (

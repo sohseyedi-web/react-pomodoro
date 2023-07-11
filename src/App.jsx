@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router";
+import Layout from "./components/layout/Layout";
 import Setting from "./components/setting/Setting";
 import TodoList from "./components/todos/TodoList";
 import Profile from "./components/profile/Profile";
-import Layout from "./components/layout/Layout";
 import Navigation from "./components/common/Navigation";
 
 function App() {

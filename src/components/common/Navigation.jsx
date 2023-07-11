@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import * as RiIcon from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const LinkItem = [
   { path: "/profile", icon: <RiIcon.RiUser3Line size={25} /> },

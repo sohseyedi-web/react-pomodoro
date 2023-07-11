@@ -1,8 +1,8 @@
 import TodoForm from "./TodoForm";
-import * as RiIcon from "react-icons/ri";
-import { useTimer, useTimerDispatch } from "../../context/TimerProvider";
 import { toast } from "react-hot-toast";
+import * as RiIcon from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { useTimer, useTimerDispatch } from "../../context/TimerProvider";
 
 const TodoList = () => {
   const { timers } = useTimer();

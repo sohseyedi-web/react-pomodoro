@@ -1,11 +1,11 @@
 import Header from "./Header";
-import { useState, useEffect, useRef } from "react";
-import * as FaIcon from "react-icons/fa";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import { useSetting } from "../../context/SettingProvider";
 import { toast } from "react-hot-toast";
-import { useTimer } from "../../context/TimerProvider";
 import { Link } from "react-router-dom";
+import * as FaIcon from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import { useTimer } from "../../context/TimerProvider";
+import { useSetting } from "../../context/SettingProvider";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 const red = "#6b4ca6";
 const green = "#4aec8c";

@@ -1,5 +1,5 @@
-import * as RiIcon from "react-icons/ri";
 import { useState } from "react";
+import * as RiIcon from "react-icons/ri";
 
 const Select = ({ title, type }) => {
   const [open, setOpen] = useState();
