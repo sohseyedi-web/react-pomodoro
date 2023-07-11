@@ -26,7 +26,7 @@ const TodoList = () => {
         یادداشت ها
       </h4>
       <TodoForm />
-      <ul className="my-3">
+      <ul className="my-3 h-[580px] overflow-y-auto lists">
         {timers.length === 0 ? (
           <p className="text-center text-white">یادداشتی وجود ندارد</p>
         ) : (
